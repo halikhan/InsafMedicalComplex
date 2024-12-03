@@ -119,7 +119,10 @@ If you still face any issue ensure that npm is installed for globally or follow:
 2. npm run dev
 3. Now follow from step 1 hope it would be solved
 
-
+$2y$10$zgRRIfgma.Tq.BTRdJBmEuZsB6gUB8U5ac3mUefwhoPotIb3ch8oG
+### Logins!!!
+admin@hospital.com
+user1234 
 
 
 
