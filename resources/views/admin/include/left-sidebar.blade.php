@@ -54,7 +54,19 @@
                                     <a class="nav-link {{ request()->routeIs('users.index') ? 'active-link' : '' }}" href="{{route('users.index')}}">Manage Users</a>
 
                                 </div>
+                                <div class="sb-sidenav-menu-heading text-light">Doctors</div>
+                  
+                                      <!-- Doctors Menu -->
+                                      <a class="nav-link text-light" href="#" onclick="toggleSubMenu('services')">
+                                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
 
+                                        Services
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div id="services" style="display: {{ request()->routeIs('services.*') ? 'block' : 'none' }}; padding-left: 20px;">
+                                        <a class="nav-link {{ request()->routeIs('services.create') ? 'active-link' : '' }}" href="{{route('services.create')}}">Add services</a>
+                                        <a class="nav-link {{ request()->routeIs('services.index') ? 'active-link' : '' }}" href="{{route('services.index')}}">Manage servicess</a>
+                                    </div>
                                 <!-- Doctors Menu -->
                                 <a class="nav-link text-light" href="#" onclick="toggleSubMenu('doctor')">
                                     <div class="sb-nav-link-icon"><i class="fa-solid fa-user-doctor"></i></div>

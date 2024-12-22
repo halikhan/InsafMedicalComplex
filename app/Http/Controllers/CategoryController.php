@@ -31,11 +31,20 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate([
             'category_name'=> 'required|string|min:5|max:20',
+            // 'status'=> 'required|boolean',
         ]);
-        Category::saveCategory($request);
-        return back();
+
+        $category = new Category();
+        $category->category_name = $request->category_name;
+        $category->status = $request->status;
+        $category->save();
+        // Category::saveCategory($request);
+        // return back();
+        return back()->with('message', 'Category added successfully!');
+
     }
 
     /**

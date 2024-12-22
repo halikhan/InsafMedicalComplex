@@ -62,7 +62,9 @@ class DoctorController extends Controller
         // Handle image upload
         $imagePath = null;
         if ($request->hasFile('image')) {
+            // dd($request->hasFile('image'));
             $imagePath = $this->saveImage($request);
+            // dd( $imagePath);
         }
     
         // Create the doctor record
@@ -104,26 +106,10 @@ class DoctorController extends Controller
         $directory = 'admin-assets/assets/doctor-image/';
         $imgUrl = $directory . $imageNewName;
         $image->move($directory, $imageNewName);
+        // dd($imgUrl);
         return $imgUrl;
     }
     
-
-    // public function store(Request $request)
-    // {
-    //     $request->validate(
-    //         [
-    //             'name'=>'required',
-    //             'phone'=> 'required',
-    //             'speciality'=> 'required',
-    //             'time'=> 'required',
-    //             'day'=>'required',
-    //             'image'=>'required',
-    //             'fee'=>'required|numeric',
-    //         ]
-    //     );
-    //     Doctor::saveDoctor($request);
-    //     return back()->with('message','Doctor Added Successfully');
-    // }
 
     /**
      * Display the specified resource.
@@ -149,10 +135,80 @@ class DoctorController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        Doctor::updateDoctor($request,$id);
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'visit_days' => 'required|string',
+            'degrees' => 'required|string|max:255',
+            'contact' => 'required|string|max:20',
+            'address' => 'required|string|max:255',
+            'email' => 'nullable|email|max:255',
+            'specialist_type' => 'required|in:PRIVATE,SPECIALIST',
+            'psp' => 'nullable|numeric|min:0',
+            'services_chr' => 'nullable|numeric|min:0',
+            
+            // Charge Percentages
+            'routine_percentage' => 'nullable|numeric|min:0|max:100',
+            'special_percentage' => 'nullable|numeric|min:0|max:100',
+            'xray_percentage' => 'nullable|numeric|min:0|max:100',
+            'ultrasound_percentage' => 'nullable|numeric|min:0|max:100',
+            'ecg_percentage' => 'nullable|numeric|min:0|max:100',
+            'endoscopy_percentage' => 'nullable|numeric|min:0|max:100',
+            'mri_percentage' => 'nullable|numeric|min:0|max:100',
+            'dental_percentage' => 'nullable|numeric|min:0|max:100',
+            'opd_percentage' => 'nullable|numeric|min:0|max:100',
+            'ipd_percentage' => 'nullable|numeric|min:0|max:100',
+            'ct_scan_percentage' => 'nullable|numeric|min:0|max:100',
+            'color_doppler_percentage' => 'nullable|numeric|min:0|max:100',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+    
+        // Call the update function in the Doctor model
+            $doctor = Doctor::find($id);
 
-        return redirect('doctor');
+            // Update doctor details
+            $doctor->name = $request->input('name');
+            $doctor->visit_days = $request->input('visit_days');
+            $doctor->degrees = $request->input('degrees');
+            $doctor->contact = $request->input('contact');
+            $doctor->address = $request->input('address');
+            $doctor->email = $request->input('email');
+            $doctor->specialist_type = $request->input('specialist_type');
+            $doctor->psp = $request->input('psp', 0);
+            $doctor->services_chr = $request->input('services_chr', 0);
+
+            // Update charge percentages
+            $doctor->routine_percentage = $request->input('routine_percentage', 0);
+            $doctor->special_percentage = $request->input('special_percentage', 0);
+            $doctor->xray_percentage = $request->input('xray_percentage', 0);
+            $doctor->ultrasound_percentage = $request->input('ultrasound_percentage', 0);
+            $doctor->ecg_percentage = $request->input('ecg_percentage', 0);
+            $doctor->endoscopy_percentage = $request->input('endoscopy_percentage', 0);
+            $doctor->mri_percentage = $request->input('mri_percentage', 0);
+            $doctor->dental_percentage = $request->input('dental_percentage', 0);
+            $doctor->opd_percentage = $request->input('opd_percentage', 0);
+            $doctor->ipd_percentage = $request->input('ipd_percentage', 0);
+            $doctor->ct_scan_percentage = $request->input('ct_scan_percentage', 0);
+            $doctor->color_doppler_percentage = $request->input('color_doppler_percentage', 0);
+
+            // Handle image upload
+            if ($request->hasFile('image')) {
+                // Delete the old image if it exists
+                if ($doctor->image && file_exists($doctor->image)) {
+                    unlink($doctor->image);
+                }
+                // Save the new image
+                $doctor->image = self::saveImage($request);
+            }
+
+            // Save the updated record
+            $doctor->save();
+    
+        // return redirect('doctor')->with('message', 'Doctor updated successfully!');
+        return redirect()->route('doctor.index')->with('message', 'Service updated successfully!');
+
+
     }
+    
 
     /**
      * Remove the specified resource from storage.

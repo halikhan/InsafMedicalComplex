@@ -18,11 +18,12 @@
                 <table id="datatablesSimple">
                     <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Doctor Name</th>
                         <th>Phone</th>
                         <th>Speciality</th>
-                        <th>Room No</th>
-                        <th>Fees</th>
+                        <th>Degrees</th>
+                        <th>Service Charges</th>
                         <th>Routine (%)</th>
                         <th>Special (%)</th>
                         <th>X-Ray (%)</th>
@@ -32,13 +33,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($doctors as $doctor)
+                    @foreach($doctors as $key=> $doctor)
                         <tr>
+                            <td>{{$key +1 }}</td>
                             <td>{{$doctor->name}}</td>
-                            <td>{{$doctor->phone}}</td>
-                            <td>{{$doctor->speciality}}</td>
-                            <td>{{$doctor->room}}</td>
-                            <td>{{$doctor->fee}}/=</td>
+                            <td>{{$doctor->contact}}</td>
+                            <td>{{$doctor->specialist_type}}</td>
+                            <td>{{$doctor->degrees}}</td>
+                            <td>{{$doctor->services_chr}}/=</td>
                             <td>{{$doctor->routine_percentage ?? 0}}%</td>
                             <td>{{$doctor->special_percentage ?? 0}}%</td>
                             <td>{{$doctor->xray_percentage ?? 0}}%</td>
