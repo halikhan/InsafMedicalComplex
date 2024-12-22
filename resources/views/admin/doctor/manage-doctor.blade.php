@@ -18,6 +18,7 @@
                 <table id="datatablesSimple">
                     <thead>
                     <tr>
+<<<<<<< HEAD
                         <th>ID</th>
                         <th>Doctor Name</th>
                         <th>Phone</th>
@@ -28,11 +29,19 @@
                         <th>Special (%)</th>
                         <th>X-Ray (%)</th>
                         <th>Ultrasound (%)</th>
+=======
+                        <th>Doctor Name</th>
+                        <th>Phone</th>
+                        <th>Speciality </th>
+                        <th>Room No</th>
+                        <th>Fees</th>
+>>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
                         <th>Image</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
+<<<<<<< HEAD
                     @foreach($doctors as $key=> $doctor)
                         <tr>
                             <td>{{$key +1 }}</td>
@@ -45,6 +54,15 @@
                             <td>{{$doctor->special_percentage ?? 0}}%</td>
                             <td>{{$doctor->xray_percentage ?? 0}}%</td>
                             <td>{{$doctor->ultrasound_percentage ?? 0}}%</td>
+=======
+                    @foreach($doctors as $doctor)
+                        <tr>
+                            <td>{{$doctor->name}}</td>
+                            <td>{{$doctor->phone}}</td>
+                            <td>{{$doctor->speciality}}</td>
+                            <td>{{$doctor->room}}</td>
+                            <td>{{$doctor->fee}}/=</td>
+>>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
                             <td>
                                 <img src="{{asset($doctor->image)}}" alt="" class="img-fluid" width="50px" height="50px">
                             </td>

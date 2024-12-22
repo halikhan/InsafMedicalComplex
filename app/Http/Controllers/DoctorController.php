@@ -30,6 +30,7 @@ class DoctorController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
         // Validate the request according to the updated schema
         $request->validate([
             'name' => 'required|string|max:255',
@@ -110,6 +111,22 @@ class DoctorController extends Controller
         return $imgUrl;
     }
     
+=======
+        $request->validate(
+            [
+                'name'=>'required',
+                'phone'=> 'required',
+                'speciality'=> 'required',
+                'time'=> 'required',
+                'day'=>'required',
+                'image'=>'required',
+                'fee'=>'required|numeric',
+            ]
+        );
+        Doctor::saveDoctor($request);
+        return back()->with('message','Doctor Added Successfully');
+    }
+>>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
 
     /**
      * Display the specified resource.
@@ -135,6 +152,7 @@ class DoctorController extends Controller
      */
     public function update(Request $request, string $id)
     {
+<<<<<<< HEAD
         $request->validate([
             'name' => 'required|string|max:255',
             'visit_days' => 'required|string',
@@ -209,6 +227,12 @@ class DoctorController extends Controller
 
     }
     
+=======
+        Doctor::updateDoctor($request,$id);
+
+        return redirect('doctor');
+    }
+>>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
 
     /**
      * Remove the specified resource from storage.

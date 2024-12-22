@@ -1737,13 +1737,22 @@
             },
             "type": "library",
             "extra": {
+<<<<<<< HEAD
+=======
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                },
+>>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
                 "laravel": {
                     "providers": [
                         "Laravel\\Jetstream\\JetstreamServiceProvider"
                     ]
+<<<<<<< HEAD
                 },
                 "branch-alias": {
                     "dev-master": "3.x-dev"
+=======
+>>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
                 }
             },
             "autoload": {
@@ -2604,6 +2613,7 @@
         },
         {
             "name": "monolog/monolog",
+<<<<<<< HEAD
             "version": "3.8.1",
             "source": {
                 "type": "git",
@@ -2614,6 +2624,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/Seldaek/monolog/zipball/aef6ee73a77a66e404dd6540934a9ef1b3c855b4",
                 "reference": "aef6ee73a77a66e404dd6540934a9ef1b3c855b4",
+=======
+            "version": "3.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/monolog.git",
+                "reference": "32e515fdc02cdafbe4593e30a9350d486b125b67"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/32e515fdc02cdafbe4593e30a9350d486b125b67",
+                "reference": "32e515fdc02cdafbe4593e30a9350d486b125b67",
+>>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
                 "shasum": ""
             },
             "require": {
@@ -2691,7 +2713,11 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/Seldaek/monolog/tree/3.8.1"
+=======
+                "source": "https://github.com/Seldaek/monolog/tree/3.8.0"
+>>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
             },
             "funding": [
                 {
@@ -2703,7 +2729,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2024-12-05T17:15:07+00:00"
+=======
+            "time": "2024-11-12T13:57:08+00:00"
+>>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
         },
         {
             "name": "nesbot/carbon",
@@ -8608,6 +8638,7 @@
         },
         {
             "name": "spatie/backtrace",
+<<<<<<< HEAD
             "version": "1.7.1",
             "source": {
                 "type": "git",
@@ -8618,6 +8649,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/spatie/backtrace/zipball/0f2477c520e3729de58e061b8192f161c99f770b",
                 "reference": "0f2477c520e3729de58e061b8192f161c99f770b",
+=======
+            "version": "1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/backtrace.git",
+                "reference": "ca8be54f22a4ebedd8595f47e5081a5fbab52791"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/backtrace/zipball/ca8be54f22a4ebedd8595f47e5081a5fbab52791",
+                "reference": "ca8be54f22a4ebedd8595f47e5081a5fbab52791",
+>>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
                 "shasum": ""
             },
             "require": {
@@ -8655,7 +8698,11 @@
                 "spatie"
             ],
             "support": {
+<<<<<<< HEAD
                 "source": "https://github.com/spatie/backtrace/tree/1.7.1"
+=======
+                "source": "https://github.com/spatie/backtrace/tree/1.7.0"
+>>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
             },
             "funding": [
                 {
@@ -8667,7 +8714,11 @@
                     "type": "other"
                 }
             ],
+<<<<<<< HEAD
             "time": "2024-12-02T13:28:15+00:00"
+=======
+            "time": "2024-12-02T09:02:50+00:00"
+>>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
         },
         {
             "name": "spatie/error-solutions",
@@ -8745,6 +8796,7 @@
         },
         {
             "name": "spatie/flare-client-php",
+<<<<<<< HEAD
             "version": "1.10.0",
             "source": {
                 "type": "git",
@@ -8755,6 +8807,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/spatie/flare-client-php/zipball/140a42b2c5d59ac4ecf8f5b493386a4f2eb28272",
                 "reference": "140a42b2c5d59ac4ecf8f5b493386a4f2eb28272",
+=======
+            "version": "1.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/flare-client-php.git",
+                "reference": "d241decc5a96013f5449a592d546dbcfa9e4f909"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/flare-client-php/zipball/d241decc5a96013f5449a592d546dbcfa9e4f909",
+                "reference": "d241decc5a96013f5449a592d546dbcfa9e4f909",
+>>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
                 "shasum": ""
             },
             "require": {
@@ -8802,7 +8866,11 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/flare-client-php/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/spatie/flare-client-php/tree/1.10.0"
+=======
+                "source": "https://github.com/spatie/flare-client-php/tree/1.9.0"
+>>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
             },
             "funding": [
                 {
@@ -8810,7 +8878,11 @@
                     "type": "github"
                 }
             ],
+<<<<<<< HEAD
             "time": "2024-12-02T14:30:06+00:00"
+=======
+            "time": "2024-12-02T09:35:56+00:00"
+>>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
         },
         {
             "name": "spatie/ignition",

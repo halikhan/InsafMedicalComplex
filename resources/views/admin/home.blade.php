@@ -7,7 +7,11 @@
 @section('content')
     <div class="container-fluid px-4">
         <h1 class="mt-4" style="font-size: 35px; font-weight: 600;">
+<<<<<<< HEAD
             Welcome to <span style="color: #009cd9">Insaaf</span> <span style="color: red">Medical Complex</span> Dashboard
+=======
+            Welcome to <span style="color: #009cd9">Insaf</span> <span style="color: red">Medical Complex</span> Dashboard
+>>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
         </h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active">Dashboard</li>

@@ -124,8 +124,11 @@ $2y$10$zgRRIfgma.Tq.BTRdJBmEuZsB6gUB8U5ac3mUefwhoPotIb3ch8oG
 admin@hospital.com
 user1234 
 
+<<<<<<< HEAD
 php artisan make:seeder UsersTableSeeder
 php artisan db:seed --class=UsersTableSeeder
+=======
+>>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
 
 
 

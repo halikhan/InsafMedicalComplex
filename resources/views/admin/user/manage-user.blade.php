@@ -1,6 +1,10 @@
 @extends('admin.master')
 @section('title')
+<<<<<<< HEAD
 User's Management
+=======
+    Manage Pharmachy
+>>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
 @endsection
 
 @section('content')
@@ -10,9 +14,15 @@ User's Management
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
+<<<<<<< HEAD
                 Manage User
 
                 <div class="d-flex justify-content-end" style="margin-top: -25px;"><a href="{{route('users.create')}}" class="btn btn-primary">Add User</a></div>
+=======
+                Manage Food
+
+                <div class="d-flex justify-content-end" style="margin-top: -25px;"><a href="{{route('pharmachy.create')}}" class="btn btn-primary">Add Medicine</a></div>
+>>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
             </div>
             <div class="card-body">
                 <table id="datatablesSimple">

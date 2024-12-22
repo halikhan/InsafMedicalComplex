@@ -32,7 +32,11 @@
             <div class="nav">
                 {{-- <div class="sb-sidenav-menu-heading">Core</div>
                 <a class="nav-link" href="{{route('home')}}"> --}}
+<<<<<<< HEAD
                     <div class="sb-sidenav-menu-heading text-light">Insaaf Medical Complex Menu</div>
+=======
+                    <div class="sb-sidenav-menu-heading text-light">Insaf Medical Complex Menu</div>
+>>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
                     <a class="nav-link {{ request()->routeIs('home') ? 'active-link' : '' }}" href="{{route('home')}}">
                              <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                  Dashboard
@@ -54,6 +58,7 @@
                                     <a class="nav-link {{ request()->routeIs('users.index') ? 'active-link' : '' }}" href="{{route('users.index')}}">Manage Users</a>
 
                                 </div>
+<<<<<<< HEAD
                                 <div class="sb-sidenav-menu-heading text-light">Doctors</div>
                   
                                       <!-- Doctors Menu -->
@@ -67,6 +72,9 @@
                                         <a class="nav-link {{ request()->routeIs('services.create') ? 'active-link' : '' }}" href="{{route('services.create')}}">Add services</a>
                                         <a class="nav-link {{ request()->routeIs('services.index') ? 'active-link' : '' }}" href="{{route('services.index')}}">Manage servicess</a>
                                     </div>
+=======
+
+>>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
                                 <!-- Doctors Menu -->
                                 <a class="nav-link text-light" href="#" onclick="toggleSubMenu('doctor')">
                                     <div class="sb-nav-link-icon"><i class="fa-solid fa-user-doctor"></i></div>

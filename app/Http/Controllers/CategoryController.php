@@ -31,6 +31,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
         // dd($request->all());
         $request->validate([
             'category_name'=> 'required|string|min:5|max:20',
@@ -45,6 +46,13 @@ class CategoryController extends Controller
         // return back();
         return back()->with('message', 'Category added successfully!');
 
+=======
+        $request->validate([
+            'category_name'=> 'required|string|min:5|max:20',
+        ]);
+        Category::saveCategory($request);
+        return back();
+>>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
     }
 
     /**
