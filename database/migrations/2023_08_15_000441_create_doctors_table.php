@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-<<<<<<< HEAD
             $table->string('visit_days');
             $table->string('degrees');
             $table->string('contact');
@@ -59,19 +58,6 @@ return new class extends Migration
     //         $table->timestamps();
     //     });
     // }
-=======
-            $table->string('phone');
-            $table->string('speciality')->nullable();
-            $table->string('room')->nullable();
-            $table->string('time');
-            $table->string('day');
-            $table->string('fee');
-            $table->text('description')->nullable();
-            $table->string('image');
-            $table->timestamps();
-        });
-    }
->>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
 
     /**
      * Reverse the migrations.
