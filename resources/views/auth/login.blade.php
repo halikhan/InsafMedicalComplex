@@ -112,17 +112,10 @@
         </div>
 
         <h1>
-<<<<<<< HEAD
             <span>Insaaf</span> <span style="color: red;">Medical Complex</span>
         </h1>
 
         <form method="POST" action="{{ route('login') }}">
-=======
-            <span>Insaf</span> <span style="color: red;">Medical Complex</span>
-        </h1>
-
-        <form method="POST" action="/login">
->>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
             @csrf
             <input type="email" name="email" class="form-control" placeholder="Email" required>
             <input type="password" name="password" class="form-control" placeholder="Password" required>
