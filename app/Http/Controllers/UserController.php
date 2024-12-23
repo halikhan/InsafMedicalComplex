@@ -102,7 +102,6 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-<<<<<<< HEAD
         $userdata = User::find($id);
         if($userdata->image){
             if(file_exists($userdata->image)){
@@ -112,8 +111,5 @@ class UserController extends Controller
         $userdata->delete();
         return back()->with('message', 'User Deleted successfully!');
 
-=======
-        //
->>>>>>> 4d0cdcbbad56ca35cf2064831b8fbef357107b1f
     }
 }

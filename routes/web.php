@@ -11,6 +11,7 @@ use App\Http\Controllers\FoodController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PharmachyController;
 use App\Http\Controllers\LabController;
+use App\Http\Controllers\ServiceController;
 
 Route::get('/',[HomeController::class,'index']);
 Route::get('/home',[HomeController::class,'redirect'])->name('home')->middleware('auth','verified');
@@ -71,6 +72,7 @@ Route::get('/show-Medi-order/',[HomeController::class,'showMediOrder'])->name('s
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
     Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
     Route::resource('doctor',DoctorController::class);
+    Route::resource('services',ServiceController::class);
     Route::resource('blog',BlogController::class);
     Route::resource('category',CategoryController::class);
     Route::resource('food',FoodController::class);
