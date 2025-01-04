@@ -52,36 +52,59 @@
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
                 Top Doctors
-                <div class="d-flex justify-content-end" style="margin-top: -20px;">
+                {{-- <div class="d-flex justify-content-end" style="margin-top: -20px;">
                     <a href="{{ route('doctor.index') }}" class="btn btn-primary">Manage Doctor</a>
-                </div>
+                </div> --}}
             </div>
             <div class="card-body">
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
-                            <th>Name</th>
+                            <th>ID</th>
+                            <th>Doctor Name</th>
                             <th>Phone</th>
                             <th>Speciality</th>
-                            <th>Room No</th>
-                            <th>Fees</th>
+                            <th>Degrees</th>
+                            <th>Service Charges</th>
+                            <th>Routine (%)</th>
+                            <th>Special (%)</th>
+                            <th>X-Ray (%)</th>
+                            <th>Ultrasound (%)</th>
                             <th>Image</th>
+                            {{-- <th>Action</th> --}}
                         </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($doctors as $doctor)
+                        </thead>
+                        <tbody>
+                        @foreach($doctors as $key=> $doctor)
                             <tr>
-                                <td>{{ $doctor->name }}</td>
-                                <td>{{ $doctor->phone }}</td>
-                                <td>{{ $doctor->speciality }}</td>
-                                <td>{{ $doctor->room }}</td>
-                                <td>{{ $doctor->fee }}/=</td>
+                                <td>{{$key +1 }}</td>
+                                <td>{{$doctor->name}}</td>
+                                <td>{{$doctor->contact}}</td>
+                                <td>{{$doctor->specialist_type}}</td>
+                                <td>{{$doctor->degrees}}</td>
+                                <td>{{$doctor->services_chr}}/=</td>
+                                <td>{{$doctor->routine_percentage ?? 0}}%</td>
+                                <td>{{$doctor->special_percentage ?? 0}}%</td>
+                                <td>{{$doctor->xray_percentage ?? 0}}%</td>
+                                <td>{{$doctor->ultrasound_percentage ?? 0}}%</td>
                                 <td>
-                                    <img src="{{ asset($doctor->image) }}" alt="" class="img-fluid" width="50px" height="50px">
+                                    {{-- @dd($doctor->image) --}}
+                                    <img src="{{asset($doctor->image ?? 'admin-assets/assets/img/noimage.png')}}" alt="" class="img-fluid" width="50px" height="50px">
                                 </td>
+                                {{-- <td class="d-flex">
+                                    <div class="btn-group">
+                                        <a href="{{ route('doctor.edit', $doctor->id) }}" class="btn btn-primary">Edit</a>
+                                        <form action="{{ route('doctor.destroy', $doctor->id) }}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <input type="submit" class="btn" value="Delete" style="background-color: deeppink;color: white;margin-left: 5px;">
+                                        </form>
+                                    </div>
+                                </td> --}}
+    
                             </tr>
                         @endforeach
-                    </tbody>
+                        </tbody>
                 </table>
             </div>
         </div>

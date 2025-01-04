@@ -1,0 +1,59 @@
+@extends('admin.master')
+
+@section('title', 'Edit Company')
+
+@section('content')
+<div class="container-fluid px-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-7">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        <button data-dismiss="alert" type="button" class="close">&times;</button>
+                        {{ session()->get('message') }}
+                    </div>
+                @endif
+        <div class="card-header">
+            <h3 class="text-center">Edit Panel/ Outside / Company</h3>
+        </div>
+        <div class="card-body">
+            <form action="{{ route('company_registrations.update', $companyRegistration->id) }}" method="POST">
+                @csrf
+                @method('PUT')
+                <div class="mb-3">
+                    <label for="panel_name" class="form-label">Panel Name</label>
+                    <input type="text" name="panel_name" id="panel_name" class="form-control" value="{{ $companyRegistration->panel_name }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="panel_address" class="form-label">Panel Address</label>
+                    <textarea name="panel_address" id="panel_address" class="form-control">{{ $companyRegistration->panel_address }}</textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="contact_no" class="form-label">Contact No</label>
+                    <input type="text" name="contact_no" id="contact_no" class="form-control" value="{{ $companyRegistration->contact_no }}">
+                </div>
+                <div class="mb-3">
+                    <label for="panel_code" class="form-label">Panel Code</label>
+                    <input type="text" name="panel_code" id="panel_code" class="form-control" value="{{ $companyRegistration->panel_code }}">
+                </div>
+                <div class="mb-3">
+                    <label for="reg_date" class="form-label">Registration Date</label>
+                    <input type="date" name="reg_date" id="reg_date" class="form-control" value="{{ $companyRegistration->reg_date }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="rate_list_status" class="form-label">Rate List Status</label>
+                    <select name="rate_list_status" id="rate_list_status" class="form-control" required>
+                        <option value="Same Rate" {{ $companyRegistration->rate_list_status == 'Same Rate' ? 'selected' : '' }}>Same Rate</option>
+                        <option value="Change Rate" {{ $companyRegistration->rate_list_status == 'Change Rate' ? 'selected' : '' }}>Change Rate</option>
+                        <option value="Outside RateList" {{ $companyRegistration->rate_list_status == 'Outside RateList' ? 'selected' : '' }}>Outside RateList</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-outline-success text-center">Update</button>
+                <a href="{{ route('company_registrations.index') }}" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

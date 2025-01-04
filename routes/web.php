@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CompanyRegistrationController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PharmachyController;
@@ -72,6 +73,8 @@ Route::get('/show-Medi-order/',[HomeController::class,'showMediOrder'])->name('s
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
     Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
     Route::resource('services', ServiceController::class);
+    Route::resource('company_registrations', CompanyRegistrationController::class);
+
     Route::resource('doctor',DoctorController::class);
     Route::resource('blog',BlogController::class);
     Route::resource('category',CategoryController::class);

@@ -77,6 +77,17 @@
                                     <a class="nav-link {{ request()->routeIs('doctor.create') ? 'active-link' : '' }}" href="{{route('doctor.create')}}">Add Doctor</a>
                                     <a class="nav-link {{ request()->routeIs('doctor.index') ? 'active-link' : '' }}" href="{{route('doctor.index')}}">Manage Doctors</a>
                                 </div>
+                                <!-- Company Registration Menu -->
+                                <a class="nav-link text-light" href="#" onclick="toggleSubMenu('company')">
+                                    <div class="sb-nav-link-icon"><i class="fa-solid fa-building"></i></div>
+                                    Company Registration
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div id="company" style="display: {{ request()->routeIs('company_registrations.*') ? 'block' : 'none' }}; padding-left: 20px;">
+                                    <a class="nav-link {{ request()->routeIs('company_registrations.create') ? 'active-link' : '' }}" href="{{ route('company_registrations.create') }}">Add Company</a>
+                                    <a class="nav-link {{ request()->routeIs('company_registrations.index') ? 'active-link' : '' }}" href="{{ route('company_registrations.index') }}">Manage Companies</a>
+                                </div>
+
                             @endif
                         @endauth
                         @endif
