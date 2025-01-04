@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Doctor;
+use App\Models\Service;
 
 class DoctorController extends Controller
 {
@@ -22,7 +23,10 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        return view('admin.doctor.add-doctor');
+        $services = Service::all(); 
+        return view('admin.doctor.add-doctor', compact('services'));
+       
+
     }
 
     /**
@@ -30,6 +34,7 @@ class DoctorController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());    
         // Validate the request according to the updated schema
         $request->validate([
             'name' => 'required|string|max:255',
@@ -38,7 +43,7 @@ class DoctorController extends Controller
             'contact' => 'required|string|max:20',
             'address' => 'required|string|max:255',
             'email' => 'nullable|email|max:255',
-            'specialist_type' => 'required|in:PRIVATE,SPECIALIST',
+            'specialist_type' => 'required|string|max:255',
             'psp' => 'nullable|numeric|min:0',
             'services_chr' => 'nullable|numeric|min:0',
     
@@ -124,9 +129,11 @@ class DoctorController extends Controller
      */
     public function edit(string $id)
     {
+        
         return view('admin.doctor.edit-doctor',[
             'doctor'=>Doctor::find($id),
-            'doctors'=>Doctor::all()
+            'doctors'=>Doctor::all(),
+            'services'=>Service::all()
         ]);
     }
 
@@ -142,7 +149,7 @@ class DoctorController extends Controller
             'contact' => 'required|string|max:20',
             'address' => 'required|string|max:255',
             'email' => 'nullable|email|max:255',
-            'specialist_type' => 'required|in:PRIVATE,SPECIALIST',
+            'specialist_type' => 'required|string|max:255',
             'psp' => 'nullable|numeric|min:0',
             'services_chr' => 'nullable|numeric|min:0',
             

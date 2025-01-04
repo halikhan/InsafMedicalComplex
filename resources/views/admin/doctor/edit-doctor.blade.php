@@ -71,9 +71,11 @@
                                 <div class="col-md-12">
                                     <div class="form-floating mb-3 mb-md-0">
                                         <select name="specialist_type" class="form-select" style="width: 100%;">
-                                            <option value="PRIVATE" {{ $doctor->specialist_type == 'PRIVATE' ? 'selected' : '' }}>Private</option>
-                                            <option value="SPECIALIST" {{ $doctor->specialist_type == 'SPECIALIST' ? 'selected' : '' }}>Specialist</option>
-                                        </select>
+                                            @foreach ($services as $value)
+                                            <option value="{{$value->specialist_type}}" {{ $doctor->specialist_type == $value->specialist_type ? 'selected' : '' }}>{{$value->specialist_type}}</option>
+
+                                            @endforeach
+                                   </select>
                                         <label for="specialist_type">Specialist Type</label>
                                     </div>
                                 </div>
@@ -128,7 +130,8 @@
                             <!-- Image -->
                             <div class="row mb-3">
                                 <div class="col-md-12 text-center">
-                                    <img src="{{ asset($doctor->image) }}" alt="Doctor Image" height="150px" width="150px">
+                                <img src="{{asset($doctor->image ?? 'admin-assets/assets/img/noimage.png')}}" alt="" class="img-fluid" width="50px" height="50px">
+
                                 </div>
                                 <div class="col-md-12">
                                     <input type="file" class="form-control" name="image">

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('email')->nullable();
             $table->string('image')->nullable();
-            $table->enum('specialist_type', ['PRIVATE', 'SPECIALIST'])->default('PRIVATE');
+            $table->string('specialist_type')->nullable();
             $table->decimal('psp', 8, 2)->default(0);
             $table->decimal('services_chr', 8, 2)->default(0);
 

@@ -65,15 +65,21 @@
                                         <label for="email">Email</label>
                                     </div>
                                 </div>
+
                                 <div class="col-md-6">
                                     <div class="form-floating mb-3">
                                         <select class="form-control" name="specialist_type">
-                                            <option value="PRIVATE" {{ old('specialist_type') == 'PRIVATE' ? 'selected' : '' }}>PRIVATE</option>
-                                            <option value="SPECIALIST" {{ old('specialist_type') == 'SPECIALIST' ? 'selected' : '' }}>SPECIALIST</option>
+                                            @foreach ($services as $value)
+                                            <option value="{{$value->specialist_type}}" {{ old('specialist_type') == $value->specialist_type ? 'selected' : '' }}>{{$value->specialist_type}}</option>
+    
+                                            @endforeach
+                                            {{-- <option value="PRIVATE" {{ old('specialist_type') == 'PRIVATE' ? 'selected' : '' }}>PRIVATE</option> --}}
+                                            {{-- <option value="SPECIALIST" {{ old('specialist_type') == 'SPECIALIST' ? 'selected' : '' }}>SPECIALIST</option> --}}
                                         </select>
                                         <label for="specialist_type">Specialist Type</label>
                                     </div>
                                 </div>
+
                             </div>
                             <!-- Percentage Fields -->
                             <div class="row mb-3">

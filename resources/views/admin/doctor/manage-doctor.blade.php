@@ -46,7 +46,8 @@
                             <td>{{$doctor->xray_percentage ?? 0}}%</td>
                             <td>{{$doctor->ultrasound_percentage ?? 0}}%</td>
                             <td>
-                                <img src="{{asset($doctor->image)}}" alt="" class="img-fluid" width="50px" height="50px">
+                                {{-- @dd($doctor->image) --}}
+                                <img src="{{asset($doctor->image ?? 'admin-assets/assets/img/noimage.png')}}" alt="" class="img-fluid" width="50px" height="50px">
                             </td>
                             <td class="d-flex">
                                 <div class="btn-group">
