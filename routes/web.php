@@ -13,6 +13,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PharmachyController;
 use App\Http\Controllers\LabController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TestRateController;
 
 Route::get('/',[HomeController::class,'index']);
 Route::get('/home',[HomeController::class,'redirect'])->name('home')->middleware('auth','verified');
@@ -83,6 +84,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::resource('pharmachy',PharmachyController::class);
     Route::resource('lab',LabController::class);
 
+    Route::resource('test_rates', TestRateController::class);
 
 });
 

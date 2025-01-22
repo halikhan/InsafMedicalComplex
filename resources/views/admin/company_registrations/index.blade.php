@@ -14,6 +14,7 @@
                 <a href="{{ route('company_registrations.create') }}" class="btn btn-primary">Add</a>
             </div>
         </div>
+        
         <div class="card-body">
             <table id="datatablesSimple">
                 <thead>

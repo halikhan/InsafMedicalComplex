@@ -14,7 +14,7 @@
             <i class="fas fa-table me-1"></i>
             <h3 class="text-center">List of Services</h3>
             <div class="d-flex justify-content-end" style="margin-top: -20px;">
-                <a href="{{ route('services.create') }}" class="btn btn-primary">Add Service</a>
+                <a href="{{ route('services.create') }}" class="btn btn-primary mb-3">Add Service</a>
             </div>
         </div>
         <div class="card-body">

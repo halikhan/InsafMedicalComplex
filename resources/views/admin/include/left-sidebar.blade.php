@@ -80,12 +80,12 @@
                                 <!-- Company Registration Menu -->
                                 <a class="nav-link text-light" href="#" onclick="toggleSubMenu('company')">
                                     <div class="sb-nav-link-icon"><i class="fa-solid fa-building"></i></div>
-                                    Company Registration
+                                    Panel/ Outside 
                                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                 </a>
                                 <div id="company" style="display: {{ request()->routeIs('company_registrations.*') ? 'block' : 'none' }}; padding-left: 20px;">
-                                    <a class="nav-link {{ request()->routeIs('company_registrations.create') ? 'active-link' : '' }}" href="{{ route('company_registrations.create') }}">Add Company</a>
-                                    <a class="nav-link {{ request()->routeIs('company_registrations.index') ? 'active-link' : '' }}" href="{{ route('company_registrations.index') }}">Manage Companies</a>
+                                    <a class="nav-link {{ request()->routeIs('company_registrations.create') ? 'active-link' : '' }}" href="{{ route('company_registrations.create') }}">Add Panel/Outside</a>
+                                    <a class="nav-link {{ request()->routeIs('company_registrations.index') ? 'active-link' : '' }}" href="{{ route('company_registrations.index') }}">Manage Panel/Outside</a>
                                 </div>
 
                             @endif
@@ -144,10 +144,10 @@
                             Lab Tests
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
-                        <div id="labMenu" style="display: {{ request()->routeIs('lab.*') ? 'block' : 'none' }}; padding-left: 20px;">
-                            <a class="nav-link {{ request()->routeIs('lab.create') ? 'active-link' : '' }}" href="{{route('lab.create')}}">Add Test</a>
-                            <a class="nav-link {{ request()->routeIs('lab.index') ? 'active-link' : '' }}" href="{{route('lab.index')}}">Manage Test</a>
-                            <a class="nav-link {{ request()->routeIs('lab-order') ? 'active-link' : '' }}" href="{{route('lab-order')}}">Manage Order</a>
+                        <div id="labMenu" style="display: {{ request()->routeIs('test_rates.*') ? 'block' : 'none' }}; padding-left: 20px;">
+                            <a class="nav-link {{ request()->routeIs('test_rates.create') ? 'active-link' : '' }}" href="{{route('test_rates.create')}}">Add Test</a>
+                            <a class="nav-link {{ request()->routeIs('test_rates.index') ? 'active-link' : '' }}" href="{{route('test_rates.index')}}">Manage Test</a>
+                            {{-- <a class="nav-link {{ request()->routeIs('test_rates-order') ? 'active-link' : '' }}" href="{{route('test_rates-order')}}">Manage Order</a> --}}
                         </div>
                     @endif
                 @endauth
@@ -165,7 +165,7 @@
            @endauth
            @endif
           {{-- Food Section --}}
-            @if(Route::has('login'))
+            {{-- @if(Route::has('login'))
             @auth
                 @if(Auth::user()->usertype == 3 || Auth::user()->usertype == 1)
                     <div class="sb-sidenav-menu-heading text-light">Food</div>
@@ -192,10 +192,10 @@
                     </div>
                 @endif
             @endauth
-            @endif
+            @endif --}}
 
             {{-- Blog Section --}}
-            @if(Route::has('login'))
+            {{-- @if(Route::has('login'))
             @auth
                 @if(Auth::user()->usertype == 1)
                     <div class="sb-sidenav-menu-heading text-light">Blog</div>
@@ -222,7 +222,7 @@
                     </div>
                 @endif
             @endauth
-            @endif
+            @endif --}}
 
 
          
