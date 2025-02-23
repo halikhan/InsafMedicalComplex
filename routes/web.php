@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DoctorController;
@@ -12,8 +13,10 @@ use App\Http\Controllers\FoodController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PharmachyController;
 use App\Http\Controllers\LabController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TestRateController;
+use App\Http\Controllers\WardController;
 
 Route::get('/',[HomeController::class,'index']);
 Route::get('/home',[HomeController::class,'redirect'])->name('home')->middleware('auth','verified');
@@ -75,7 +78,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
     Route::resource('services', ServiceController::class);
     Route::resource('company_registrations', CompanyRegistrationController::class);
-
+    
+    Route::resource('accounts', AccountController::class);
+    Route::resource('reports', ReportController::class);
     Route::resource('doctor',DoctorController::class);
     Route::resource('blog',BlogController::class);
     Route::resource('category',CategoryController::class);
@@ -85,6 +90,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::resource('lab',LabController::class);
 
     Route::resource('test_rates', TestRateController::class);
+    Route::resource('wards', WardController::class);
 
 });
 

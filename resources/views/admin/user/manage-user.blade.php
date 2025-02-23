@@ -31,16 +31,20 @@ User's Management
                         <tr>
                             <td>{{$user->name}}</td>
                             <td>
-                                @if($user->usertype == 1)
+                                @if($user->usertype == 0)
+                                Regular User
+                                    @elseif($user->usertype == 1)
                                     Super Admin
                                 @elseif($user->usertype == 2)
-                                    Food
-                                @elseif($user->usertype == 3)
+                                Doctor
+                                    {{-- @elseif($user->usertype == 2)
+                                    Food --}}
+                                    @elseif($user->usertype == 4)
                                     Receptionist
                                 @elseif($user->usertype == 5)
                                     Lab and Medicines
                                 @else
-                                    Customer
+                                    None
                                 @endif
                             </td>
                             <td>{{$user->email}}</td>

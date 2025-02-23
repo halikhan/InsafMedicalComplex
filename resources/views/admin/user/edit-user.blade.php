@@ -20,17 +20,18 @@
                             @csrf
                             @method('PUT')
                             <div class="col-12">
-                                <label class="form-label">Role</label>
+                                <label class="form-label">Select Role</label>
                                 <select name="usertype" class="form-control" required>
-                                    <option value="">Select Role</option>
-                                    @foreach($userRoles as $role)
-                                        <option value="{{ $role }}" {{ $user->usertype == $role ? 'selected' : '' }}>
+                                    {{-- <option value="">Select Role</option> --}}
+                                    {{-- @dd($userRoles ) --}}
+                                    @foreach($userRoles as $key=>  $role)
+                                        <option value="{{ $key }}" {{ $user->usertype == $key ? 'selected' : '' }}>
                                             {{ $role }}
                                         </option>
                                     @endforeach
                                 </select>
                             </div>
-
+                            reports
 
                             <div class="form-floating my-3 mb-md-0">
                                 <input class="form-control" name="name" type="text" placeholder="Enter Food Name" value="{{$user->name}}"/>

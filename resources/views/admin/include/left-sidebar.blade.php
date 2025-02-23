@@ -87,11 +87,74 @@
                                     <a class="nav-link {{ request()->routeIs('company_registrations.create') ? 'active-link' : '' }}" href="{{ route('company_registrations.create') }}">Add Panel/Outside</a>
                                     <a class="nav-link {{ request()->routeIs('company_registrations.index') ? 'active-link' : '' }}" href="{{ route('company_registrations.index') }}">Manage Panel/Outside</a>
                                 </div>
-
+                                <!-- Report Registration Menu -->
+                                <a class="nav-link text-light" href="#" onclick="toggleSubMenu('report')">
+                                    <div class="sb-nav-link-icon"><i class="fa-solid fa-file-alt"></i></div>
+                                    Report Registration
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div id="report" style="display: {{ request()->routeIs('reports.*') ? 'block' : 'none' }}; padding-left: 20px;">
+                                    <a class="nav-link {{ request()->routeIs('reports.create') ? 'active-link' : '' }}" href="{{ route('reports.create') }}">Add Report</a>
+                                    <a class="nav-link {{ request()->routeIs('reports.index') ? 'active-link' : '' }}" href="{{ route('reports.index') }}">Manage Reports</a>
+                                </div>
+                                <!-- account Registration Menu -->
+                                    <a class="nav-link text-light" href="#" onclick="toggleSubMenu('account')">
+                                        <div class="sb-nav-link-icon"><i class="fa-solid fa-file-alt"></i></div>
+                                        Account Registration
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div id="account" style="display: {{ request()->routeIs('accounts.*') ? 'block' : 'none' }}; padding-left: 20px;">
+                                        <a class="nav-link {{ request()->routeIs('accounts.create') ? 'active-link' : '' }}" href="{{ route('accounts.create') }}">Add account</a>
+                                        <a class="nav-link {{ request()->routeIs('accounts.index') ? 'active-link' : '' }}" href="{{ route('accounts.index') }}">Manage Reports</a>
+                                    </div>
+                                   <!-- Laboratory Tests Section -->
+                                <div class="sb-sidenav-menu-heading text-light">Ward/Room/Bed</div>
+                                <a class="nav-link text-light" href="#" onclick="toggleSubMenu('wardslist')">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-vials"></i></div>
+                                    Ward Registration
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div id="wardslist" style="display: {{ request()->routeIs('wards.*') ? 'block' : 'none' }}; padding-left: 20px;">
+                                    <a class="nav-link {{ request()->routeIs('wards.create') ? 'active-link' : '' }}" href="{{route('wards.create')}}">Add ward</a>
+                                    <a class="nav-link {{ request()->routeIs('wards.index') ? 'active-link' : '' }}" href="{{route('wards.index')}}">Manage ward</a>
+                                    {{-- <a class="nav-link {{ request()->routeIs('test_rates-order') ? 'active-link' : '' }}" href="{{route('test_rates-order')}}">Manage Order</a> --}}
+                                </div>
                             @endif
                         @endauth
                         @endif
+                        
+                        {{-- Pharmacy & Lab Tests --}}
+                        @if(Route::has('login'))
+                        @auth
+                            @if(Auth::user()->usertype == 5 || Auth::user()->usertype == 1)
 
+                                <!-- Laboratory Tests Section -->
+                                <div class="sb-sidenav-menu-heading text-light">Laboratory Tests</div>
+                                <a class="nav-link text-light" href="#" onclick="toggleSubMenu('labMenu')">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-vials"></i></div>
+                                    Lab Tests
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div id="labMenu" style="display: {{ request()->routeIs('test_rates.*') ? 'block' : 'none' }}; padding-left: 20px;">
+                                    <a class="nav-link {{ request()->routeIs('test_rates.create') ? 'active-link' : '' }}" href="{{route('test_rates.create')}}">Add Test</a>
+                                    <a class="nav-link {{ request()->routeIs('test_rates.index') ? 'active-link' : '' }}" href="{{route('test_rates.index')}}">Manage Test</a>
+                                    {{-- <a class="nav-link {{ request()->routeIs('test_rates-order') ? 'active-link' : '' }}" href="{{route('test_rates-order')}}">Manage Order</a> --}}
+                                </div>
+                                <!-- Pharmacy Section -->
+                                {{-- <div class="sb-sidenav-menu-heading text-light">Pharmacy</div>
+                                <a class="nav-link text-light" href="#" onclick="toggleSubMenu('pharmacyMenu')">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-pills"></i></div>
+                                    Pharmacy
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div id="pharmacyMenu" style="display: {{ request()->routeIs('pharmachy.*') || request()->routeIs('medi-order') ? 'block' : 'none' }}; padding-left: 20px;">
+                                    <a class="nav-link {{ request()->routeIs('pharmachy.create') ? 'active-link' : '' }}" href="{{route('pharmachy.create')}}">Add Medicines</a>
+                                    <a class="nav-link {{ request()->routeIs('pharmachy.index') ? 'active-link' : '' }}" href="{{route('pharmachy.index')}}">Manage Medicines</a>
+                                    <a class="nav-link {{ request()->routeIs('medi-order') ? 'active-link' : '' }}" href="{{route('medi-order')}}">Manage Order</a>
+                                </div> --}}
+                            @endif
+                        @endauth
+                        @endif
                         {{-- Appointment Section --}}
                         @if(Route::has('login'))
                         @auth
@@ -120,40 +183,9 @@
                             @endif
                         @endauth
                         @endif
-            {{-- Pharmacy & Lab Tests --}}
-                @if(Route::has('login'))
-                @auth
-                    @if(Auth::user()->usertype == 5 || Auth::user()->usertype == 1)
-                        <!-- Pharmacy Section -->
-                        <div class="sb-sidenav-menu-heading text-light">Pharmacy</div>
-                        <a class="nav-link text-light" href="#" onclick="toggleSubMenu('pharmacyMenu')">
-                            <div class="sb-nav-link-icon"><i class="fas fa-pills"></i></div>
-                            Pharmacy
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div id="pharmacyMenu" style="display: {{ request()->routeIs('pharmachy.*') || request()->routeIs('medi-order') ? 'block' : 'none' }}; padding-left: 20px;">
-                            <a class="nav-link {{ request()->routeIs('pharmachy.create') ? 'active-link' : '' }}" href="{{route('pharmachy.create')}}">Add Medicines</a>
-                            <a class="nav-link {{ request()->routeIs('pharmachy.index') ? 'active-link' : '' }}" href="{{route('pharmachy.index')}}">Manage Medicines</a>
-                            <a class="nav-link {{ request()->routeIs('medi-order') ? 'active-link' : '' }}" href="{{route('medi-order')}}">Manage Order</a>
-                        </div>
-
-                        <!-- Laboratory Tests Section -->
-                        <div class="sb-sidenav-menu-heading text-light">Laboratory Tests</div>
-                        <a class="nav-link text-light" href="#" onclick="toggleSubMenu('labMenu')">
-                            <div class="sb-nav-link-icon"><i class="fas fa-vials"></i></div>
-                            Lab Tests
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div id="labMenu" style="display: {{ request()->routeIs('test_rates.*') ? 'block' : 'none' }}; padding-left: 20px;">
-                            <a class="nav-link {{ request()->routeIs('test_rates.create') ? 'active-link' : '' }}" href="{{route('test_rates.create')}}">Add Test</a>
-                            <a class="nav-link {{ request()->routeIs('test_rates.index') ? 'active-link' : '' }}" href="{{route('test_rates.index')}}">Manage Test</a>
-                            {{-- <a class="nav-link {{ request()->routeIs('test_rates-order') ? 'active-link' : '' }}" href="{{route('test_rates-order')}}">Manage Order</a> --}}
-                        </div>
-                    @endif
-                @endauth
-                @endif
+           
            {{--    History--}}
-           @if(Route::has('login'))
+           {{-- @if(Route::has('login'))
            @auth
                @if(Auth::user()->usertype == 2 || Auth::user()->usertype == 1)
                    <div class="sb-sidenav-menu-heading text-light">History</div>
@@ -163,7 +195,7 @@
                    </a>
                @endif
            @endauth
-           @endif
+           @endif --}}
           {{-- Food Section --}}
             {{-- @if(Route::has('login'))
             @auth

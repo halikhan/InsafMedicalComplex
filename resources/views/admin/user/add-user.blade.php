@@ -21,13 +21,13 @@
                             @csrf
                             {{--Usertype--}}
                             <div class="col-12 mb-3">
-                                <label class="form-label">User Type</label>
+                                <label class="form-label">Select Role</label>
                                 <select name="usertype" id="usertype" class="form-control" required>
-                                    <option value="">Select User Role</option>
-                                    <option value="1">Super Admin</option>
+                                    {{-- <option value="">Select User Role</option> --}}
                                     <option value="0">Regular User</option>
+                                    <option value="1">Super Admin</option>
                                     <option value="2">Doctor</option>
-                                    <option value="3">Food</option>
+                                    {{-- <option value="3">Food</option> --}}
                                     <option value="4">Receptionist</option>
                                     <option value="5">Lab and Medicine</option>
                                 </select>

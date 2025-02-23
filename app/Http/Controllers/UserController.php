@@ -58,10 +58,10 @@ class UserController extends Controller
 
         // Define the user roles with their corresponding names
         $userRoles = [
-            0=>'Regular User',
+            0 =>'Regular User',
             1 => 'Super Admin',
             2 => 'Doctor',
-            3 => 'Food',
+            // 3 => 'Food',
             4 => 'Receptionist',
             5 => 'Lab and Medicines',
         ];

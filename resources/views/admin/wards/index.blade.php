@@ -16,42 +16,40 @@
 @endif
 
             <i class="fas fa-table me-1"></i>
-            <h3 class="text-center">Test Rate List</h3>
+            <h1>Ward/Room/Bed Registrations</h1>
             <div class="d-flex justify-content-end" style="margin-top: -20px;">
-                <a href="{{ route('test_rates.create') }}" class="btn btn-primary mb-3">Add New Test Rate</a>
+            <a href="{{ route('wards.create') }}" class="btn btn-primary mb-3">Create New Ward</a>
             </div>
         </div>
         <div class="card-body">
             <table id="datatablesSimple">
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Service Name</th>
+                        <th>ID</th>
                         <th>Department</th>
-                        <th>Test Name</th>
-                        <th>General Charges</th>
-                        <th>Status</th>
+                        <th>Ward Name</th>
+                        <th>Bed No</th>
+                        <th>Charges</th>
+                        <th>Description</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($testRates as $testRate)
+                    @foreach ($wards as $ward)
                     <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td>{{ $testRate->service_name }}</td>
-                        <td>{{ $testRate->department_name }}</td>
-                        <td>{{ $testRate->test_name }}</td>
-                        <td>{{ $testRate->general_charges }}</td>
-                        <td>{{ $testRate->status }}</td>
-                        <td class="d-flex">
-                            <div class="btn-group">
-                                <a href="{{ route('test_rates.edit', $testRate->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                                <form action="{{ route('test_rates.destroy', $testRate->id) }}" method="POST" class="d-inline delete-form" data-id="{{ $testRate->id }}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button  class="btn btn-danger btn-sm delete-button" data-id="{{ $testRate->id }}">Delete</button>
-                                </form>
-                            </div>
+                        <td>{{ $ward->id }}</td>
+                        <td>{{ $ward->department }}</td>
+                        <td>{{ $ward->ward_name }}</td>
+                        <td>{{ $ward->bed_no }}</td>
+                        <td>{{ $ward->charges }}</td>
+                        <td>{{ $ward->description }}</td>
+                        <td>
+                            <a href="{{ route('wards.edit', $ward->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                            <form action="{{ route('wards.destroy', $ward->id) }}" method="POST" class="d-inline delete-form" data-id="{{ $ward->id }}">
+                                @csrf
+                                @method('DELETE')
+                                <button  class="btn btn-danger btn-sm delete-button" data-id="{{ $ward->id }}">Delete</button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach

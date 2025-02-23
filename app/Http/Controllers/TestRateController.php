@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\CompanyRegistration;
+use App\Models\Service;
 use App\Models\TestRate;
 use Illuminate\Http\Request;
 
@@ -14,7 +16,10 @@ class TestRateController extends Controller
 
     public function create()
     {
-        return view('admin.test_rates.create');
+        $services = Service::all(); 
+        $companies = CompanyRegistration::all();
+
+        return view('admin.test_rates.create',get_defined_vars());
     }
 
     public function store(Request $request)
@@ -46,7 +51,9 @@ class TestRateController extends Controller
     
     public function edit(TestRate $testRate)
     {
-        return view('admin.test_rates.edit', compact('testRate'));
+        $services = Service::all(); 
+        $companies = CompanyRegistration::all();
+        return view('admin.test_rates.edit',get_defined_vars());
     }
 
     public function update(Request $request, TestRate $testRate)
