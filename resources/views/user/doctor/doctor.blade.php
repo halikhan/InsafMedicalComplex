@@ -50,7 +50,8 @@
                                 <div class="body">
                                     <h5><a href="{{route('doctor-details',['id'=>$doctors->id])}}">{{$doctors->name}}</a></h5>
                                     <span class="text-sm text-grey">{{$doctors->speciality}}</span>
-                                    <div><h3>Consultant Fee: {{$doctors->fee}}/=</h3></div>
+                                    <div><h3>Consultancy Fee: {{$doctors->fee ?? '0.00'}}</h3></div>
+
                                 </div>
                             </div>
                         </div>
@@ -129,7 +130,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary mt-3 wow zoomIn btn-home" style="background-color: #00D9A5 ;">Submit Request</button>
+                <button type="submit" class="btn btn-primary mt-3 wow zoomIn btn-home" style="background-color: #fb0000 ;">Submit Request</button>
             </form>
         </div>
     </div> <!-- .page-section -->

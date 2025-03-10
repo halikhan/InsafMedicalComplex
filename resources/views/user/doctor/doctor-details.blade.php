@@ -14,17 +14,17 @@
     <section class="doctor-details">
         <div class="row mt-2">
             <div class="cil-md-10 offset-md-1">
-                <h4 class="text-center my-2" style="font-size: 30px;font-weight: 500;color: #00D9A5;">Doctor Details</h4>
+                <h4 class="text-center my-2" style="font-size: 30px;font-weight: 500;color: #fb0000;">Doctor Details</h4>
                 <div class="row">
                     <div class="col-md-4">
                         <img src="{{asset($doctor->image)}}" alt="Doctor Image" class="img-fluid">
                     </div>
                     <div class="col-md-8 mt-4">
                         <h3>Name: {{$doctor->name}}</h3>
-                        <h4 style="color: #00D9A5">Speciality: {{$doctor->speciality}}</h4>
+                        <h4 style="color: #fb0000">Speciality: {{$doctor->speciality}}</h4>
                         <h5 class="my-3">Schedule Day: {{$doctor->day}}</h5>
                         <h5>Time: {{$doctor->time}}</h5>
-                        <div class="my-2"><h3>Consultant Fee: {{$doctor->fee}}/=</h3></div>
+                        <div class="my-2"><h3>Consultancy Fee: {{$doctor->fee}}/=</h3></div>
                     </div>
                 </div>
             </div>
@@ -106,7 +106,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary mt-3 wow zoomIn btn-home" style="background-color: #00D9A5 ;">Submit Request</button>
+                    <button type="submit" class="btn btn-primary mt-3 wow zoomIn btn-home" style="background-color: #fb0000 ;">Submit Request</button>
                 </form>
             </div>
         </div> <!-- .page-section -->

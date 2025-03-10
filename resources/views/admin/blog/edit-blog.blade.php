@@ -61,7 +61,7 @@
 
                                 <div class="col-12">
                                     <div class="d-grid">
-                                        <button type="submit" class="btn btn-primary" style="background-color: #00D9A5">Save Info</button>
+                                        <button type="submit" class="btn btn-primary" style="background-color: #fb0000">Save Info</button>
                                     </div>
                                 </div>
                             </form>

@@ -69,27 +69,31 @@
                         </span>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary wow zoomIn btn-home" style="background-color: #00D9A5 ;">Send Message</button>
+                <button type="submit" class="btn btn-primary wow zoomIn btn-home" style="background-color: #fb0000 ;">Send Message</button>
             </form>
         </div>
     </div>
 
 
-    <div class="maps-container wow fadeInUp mb-5">
-        <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
-            <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div><script>(function () {
-                    var setting = {"query":"Green University Of Bangladesh, Begum Rokeya Avenue, Dhaka, Bangladesh","width":1200,"height":400,"satellite":false,"zoom":12,"placeId":"ChIJdU6phjXHVTcR-vflRqyD76k","cid":"0xa9ef83ac46e5f7fa","coords":[23.7869074,90.37754869999999],"lang":"en","queryString":"Green University Of Bangladesh, Begum Rokeya Avenue, Dhaka, Bangladesh","centerCoord":[23.7869074,90.37754869999999],"id":"map-9cd199b9cc5410cd3b1ad21cab2e54d3","embed_id":"979992"};
-                    var d = document;
-                    var s = d.createElement('script');
-                    s.src = 'https://1map.com/js/script-for-user.js?embed_id=979992';
-                    s.async = true;
-                    s.onload = function (e) {
-                        window.OneMap.initMap(setting)
-                    };
-                    var to = d.getElementsByTagName('script')[0];
-                    to.parentNode.insertBefore(s, to);
-                })();</script><a href="https://1map.com/map-embed">1 Map</a></div>
+<div class="maps-container wow fadeInUp mb-5">
+    <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
+        <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div>
+        <script>(function () {
+            var setting = {"query":"A 57A Manghopir Rd, Metroville Sindh Industrial Trading Estate, Karachi","width":1200,"height":400,"satellite":false,"zoom":12,"placeId":"","cid":"","coords":[24.926295,67.033787],"lang":"en","queryString":"Metroville Site, Karachi","centerCoord":[24.926295,67.033787],"id":"map-9cd199b9cc5410cd3b1ad21cab2e54d3","embed_id":"979992"};
+            var d = document;
+            var s = d.createElement('script');
+            s.src = 'https://1map.com/js/script-for-user.js?embed_id=979992';
+            s.async = true;
+            s.onload = function (e) {
+                window.OneMap.initMap(setting)
+            };
+            var to = d.getElementsByTagName('script')[0];
+            to.parentNode.insertBefore(s, to);
+        })();</script>
+        <a href="https://1map.com/map-embed">1 Map</a>
     </div>
+</div>
+
 
 
 

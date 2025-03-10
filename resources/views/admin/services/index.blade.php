@@ -71,51 +71,6 @@
     });
 
     // Show confirmation toast using toastr
-    function showDeleteConfirmation(callback) {
-        toastr.warning(
-            `
-            <br>
-            <button type="button" class="btn btn-danger btn-sm" id="confirmDelete">Yes, delete it!</button>
-            <button type="button" class="btn btn-secondary btn-sm" id="cancelDelete">Cancel</button>
-            `,
-            "Are you sure?",
-            {
-                closeButton: true,
-                allowHtml: true,
-                timeOut: 0,
-                extendedTimeOut: 0,
-                tapToDismiss: false,
-                onShown: function (toast) {
-                    // Confirm delete
-                    document.getElementById('confirmDelete').addEventListener('click', function () {
-                        callback(true);
-                        toastr.clear(toast);
-                    });
-
-                    // Cancel delete
-                    document.getElementById('cancelDelete').addEventListener('click', function () {
-                        callback(false);
-                        toastr.clear(toast);
-                    });
-                },
-            }
-        );
-    }
-
-    // Attach delete event handler to delete buttons
-    document.querySelectorAll('#delete_button').forEach(button => {
-        button.addEventListener('click', function () {
-            const accountId = this.dataset.id;
-
-            // Show confirmation toast
-            showDeleteConfirmation(function (isConfirmed) {
-                if (isConfirmed) {
-                    // Redirect to delete route if confirmed
-                    window.location.href = `{{ route('accounts.destroy', '') }}/${accountId}`;
-                }
-            });
-        });
-    });
 </script>
 @endsection
 

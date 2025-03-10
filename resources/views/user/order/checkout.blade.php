@@ -97,7 +97,7 @@
 
 
                             <div class="mt-4 mb-0">
-                                <input type="submit" style="width: 95%;background-color: #00D9A5" class="btn btn-success text-center ml-3 btn-home mb-3" value="Checkout">
+                                <input type="submit" style="width: 95%;background-color: #fb0000" class="btn btn-success text-center ml-3 btn-home mb-3" value="Checkout">
                             </div>
                         </form>
                     </div>

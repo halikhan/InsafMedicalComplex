@@ -114,7 +114,7 @@
                                 <div class="col-md-12">
                                     <div class="form-floating mb-3 mb-md-0">
                                         <input class="form-control" id="inputPassword" value="{{old('fee')}}" name="fee" type="number" placeholder="Doctor Fee" />
-                                        <label for="fee">Consultant Fee</label>
+                                        <label for="fee">Consultancy Fee</label>
                                         <span class="text-danger">
                                          @error('fee')
                                             {{$message}}

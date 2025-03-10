@@ -29,9 +29,9 @@
             </div>
             <div class="col-sm-6 col-lg-3 py-3">
                 <h5>Contact</h5>
-                <p class="footer-link mt-2">2/3 Ring Road, Goldren Street, Shymoly, Dhaka</p>
+                <p class="footer-link mt-2">Metroville Road, Frontier More Near Mz Market, site, Karachi</p>
                 <a href="#" class="footer-link">02-98902-1235</a>
-                <a href="#" class="footer-link">contact@medicare.com</a>
+                <a href="#" class="footer-link">contact@Insaf-Medicalcomplex.com</a>
 
                 <h5 class="mt-3">Social Media</h5>
                 <div class="footer-sosmed mt-3">
@@ -46,6 +46,6 @@
 
         <hr>
 
-        <p id="copyright">Copyright &copy; 2023 <a href=https://www.linkedin.com/in/md-abdullah-al-shakil-98882718a/" target="_blank">Final Defence</a>. All right reserved</p>
+        <p id="copyright">Copyright &copy; 2025 <a href="https://www.facebook.com/webbridgess/" target="_blank">Insaf-MedicalComplex</a>. All right reserved</p>
     </div>
 </footer>

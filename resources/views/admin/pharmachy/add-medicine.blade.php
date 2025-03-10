@@ -105,7 +105,7 @@
                             </div>
 
                             <div class="mt-4 mb-0">
-                                <input type="submit" class="btn btn-outline-success text-center" value="Add Food">
+                                <input type="submit" class="btn btn-outline-success text-center" value="Submit">
                             </div>
                         </form>
                     </div>

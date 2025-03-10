@@ -19,7 +19,7 @@
                     <th>Doctor Name</th>
                     <th>Date</th>
                     <th style="width: 28.537265% !important;">Message</th>
-                    <th>Consultant Fee</th>
+                    <th>Consultancy Fee</th>
                     <th>Status</th>
                     <th>Cancel Appointment</th>
                 </tr>

@@ -1,6 +1,6 @@
 <div class="container-fluid px-4">
     <div class="d-flex align-items-center justify-content-between small">
-        <div class="text-muted">Copyright &copy; Your Website 2023</div>
+        <div class="text-muted">Copyright &copy; Insaf-MedicalComplex 2025</div>
         <div>
             <a href="#">Privacy Policy</a>
             &middot;

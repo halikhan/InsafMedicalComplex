@@ -45,7 +45,7 @@
                             <div class="circle-shape bg-primary text-white">
                                 <span class="mai-shield-checkmark"></span>
                             </div>
-                            <p><span>MediCare</span>-Health Protection</p>
+                            <p><span>Insaf-Medical</span>-Health Protection</p>
                         </div>
                     </div>
                     <div class="col-md-4 py-3 py-md-0">
@@ -65,7 +65,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 py-3 wow fadeInUp">
                         <h1>Welcome to Your Health <br> Center</h1>
-                        <p class="text-grey mb-4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Accusantium aperiam earum ipsa eius, inventore nemo labore eaque porro consequatur ex aspernatur. Explicabo, excepturi accusantium! Placeat voluptates esse ut optio facilis!</p>
+                        <p class="text-grey mb-4">At Insaf Medical, we are committed to providing top-quality healthcare with a team of experienced and compassionate doctors!</p>
                         <a href="{{route('about')}}" class="btn btn-primary">Learn More</a>
                     </div>
                     <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
@@ -96,7 +96,7 @@
                         <div class="body">
                             <h5><a href="{{route('doctor-details',['id'=>$doctors->id])}}">{{$doctors->name}}</a></h5>
                             <span class="text-sm text-grey" style="color: red;">{{$doctors->speciality}}</span>
-                            <div><h3>Consultant Fee: {{$doctors->fee}}/=</h3></div>
+                            <div><h5>Consultancy Fee: {{$doctors->fee ?? '0.00'}}</h5></div>
                         </div>
                     </div>
                 </div>
@@ -211,7 +211,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary mt-3 wow zoomIn btn-home" style="background-color: #00D9A5 ;">Submit Request</button>
+                <button type="submit" class="btn btn-primary mt-3 wow zoomIn btn-home" style="background-color: #fb0000 ;">Submit Request</button>
             </form>
         </div>
     </div> <!-- .page-section -->

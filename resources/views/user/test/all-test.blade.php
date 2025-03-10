@@ -22,7 +22,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <h2 class="text-center" style="color: #00D9A5; font-family: Roboto;font-size: 25px;font-weight: 500;margin-top: -20px;">Laberatory Tests</h2>
+                    <h2 class="text-center" style="color: #fb0000; font-family: Roboto;font-size: 25px;font-weight: 500;margin-top: -20px;">Laberatory Tests</h2>
                     <div class="row">
                         @foreach($lab as $foods)
                             <div class="col-md-6 col-lg-4 py-3 wow zoomIn">

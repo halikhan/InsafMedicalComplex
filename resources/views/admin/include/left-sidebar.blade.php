@@ -119,6 +119,17 @@
                                     <a class="nav-link {{ request()->routeIs('wards.index') ? 'active-link' : '' }}" href="{{route('wards.index')}}">Manage ward</a>
                                     {{-- <a class="nav-link {{ request()->routeIs('test_rates-order') ? 'active-link' : '' }}" href="{{route('test_rates-order')}}">Manage Order</a> --}}
                                 </div>
+
+                                <div class="sb-sidenav-menu-heading text-light">Patients</div>
+                                <a class="nav-link text-light" href="#" onclick="toggleSubMenu('patientslist')">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-user-injured"></i></div>
+                                    Patient Management
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div id="patientslist" style="display: {{ request()->routeIs('patients.*') ? 'block' : 'none' }}; padding-left: 20px;">
+                                    <a class="nav-link {{ request()->routeIs('patients.create') ? 'active-link' : '' }}" href="{{route('patients.create')}}">Add Patient</a>
+                                    <a class="nav-link {{ request()->routeIs('patients.index') ? 'active-link' : '' }}" href="{{route('patients.index')}}">Manage Patients</a>
+                                </div>
                             @endif
                         @endauth
                         @endif
@@ -141,7 +152,7 @@
                                     {{-- <a class="nav-link {{ request()->routeIs('test_rates-order') ? 'active-link' : '' }}" href="{{route('test_rates-order')}}">Manage Order</a> --}}
                                 </div>
                                 <!-- Pharmacy Section -->
-                                {{-- <div class="sb-sidenav-menu-heading text-light">Pharmacy</div>
+                                <div class="sb-sidenav-menu-heading text-light">Pharmacy</div>
                                 <a class="nav-link text-light" href="#" onclick="toggleSubMenu('pharmacyMenu')">
                                     <div class="sb-nav-link-icon"><i class="fas fa-pills"></i></div>
                                     Pharmacy
@@ -151,7 +162,7 @@
                                     <a class="nav-link {{ request()->routeIs('pharmachy.create') ? 'active-link' : '' }}" href="{{route('pharmachy.create')}}">Add Medicines</a>
                                     <a class="nav-link {{ request()->routeIs('pharmachy.index') ? 'active-link' : '' }}" href="{{route('pharmachy.index')}}">Manage Medicines</a>
                                     <a class="nav-link {{ request()->routeIs('medi-order') ? 'active-link' : '' }}" href="{{route('medi-order')}}">Manage Order</a>
-                                </div> --}}
+                                </div>
                             @endif
                         @endauth
                         @endif

@@ -13,7 +13,7 @@
                                     <a class="btn btn-primary" style="color: white;margin-left: 10px;margin-right: 10px" href="{{ route('myquery') }}">My Query</a>
 
                                     <div class="btn-group">
-                                        <button type="button" style="background-color: #00D9A5;" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <button type="button" style="background-color: #fb0000;" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             History
                                         </button>
                                         <div class="dropdown-menu">
@@ -24,7 +24,7 @@
                                     </div>
 
                                     <div class="btn-group ml-2">
-                                        <button type="button" style="background-color: #00D9A5;" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <button type="button" style="background-color: #fb0000;" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Cart
                                         </button>
                                         <div class="dropdown-menu">
@@ -35,7 +35,7 @@
                                     </div>
 
                                     <div class="btn-group ml-2">
-                                        <button type="button" style="background-color: #00D9A5;" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <button type="button" style="background-color: #fb0000;" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Order
                                         </button>
                                         <div class="dropdown-menu">
@@ -67,16 +67,16 @@
 
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="{{route('home')}}"><span class="text-primary">Medi</span>-Care</a>
+            <a class="navbar-brand" href="{{route('index')}}"><span class="text-primary">Insaf</span>-Medical Complex</a>
 
-            <form action="#">
+            {{-- <form action="#">
                 <div class="input-group input-navbar">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="icon-addon1"><span class="mai-search"></span></span>
                     </div>
                     <input type="text" class="form-control" placeholder="Enter keyword.." aria-label="Username" aria-describedby="icon-addon1">
                 </div>
-            </form>
+            </form> --}}
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -85,7 +85,7 @@
             <div class="collapse navbar-collapse" id="navbarSupport">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{route('home')}}">Home</a>
+                        <a class="nav-link" href="{{route('index')}}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('about')}}">About Us</a>
@@ -113,10 +113,10 @@
                     @if(Route::has('login'))
                      @auth
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('myappointment')}}" style="background-color: #00D9A5;color: white; border-radius: 10px;">Appointments</a>
+                                <a class="nav-link" href="{{route('myappointment')}}" style="background-color: #fb0000;color: white; border-radius: 10px;">Appointments</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('foodpage')}}" style="background-color: #00D9A5;color: white; margin-left: 7px; border-radius: 10px;">Food</a>
+                                <a class="nav-link" href="{{route('foodpage')}}" style="background-color: #fb0000;color: white; margin-left: 7px; border-radius: 10px;">Food</a>
                             </li>
                             <x-app-layout>
 

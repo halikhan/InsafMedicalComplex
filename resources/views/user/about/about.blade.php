@@ -34,7 +34,7 @@
                         <div class="circle-shape bg-primary text-white">
                             <span class="mai-shield-checkmark"></span>
                         </div>
-                        <p><span>MediCare</span>-Health Protection</p>
+                        <p><span>Insaf-Medical</span>-Health Protection</p>
                     </div>
                 </div>
                 <div class="col-md-4 py-3 wow zoomIn">
@@ -42,7 +42,7 @@
                         <div class="circle-shape bg-accent text-white">
                             <span class="mai-basket"></span>
                         </div>
-                        <p><span>MediCare</span>-Health Pharmacy</p>
+                        <p><span>Insaf-Medical</span>-Health Pharmacy</p>
                     </div>
                 </div>
             </div>
@@ -55,8 +55,8 @@
                 <div class="col-lg-8 wow fadeInUp">
                     <h1 class="text-center mb-3">Welcome to Your Health Center</h1>
                     <div class="text-lg">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt neque sit, explicabo vero nulla animi nemo quae cumque, eaque pariatur eum ut maxime! Tenetur aperiam maxime iure explicabo aut consequuntur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt neque sit, explicabo vero nulla animi nemo quae cumque, eaque pariatur eum ut maxime! Tenetur aperiam maxime iure explicabo aut consequuntur.</p>
-                        <p>Expedita iusto sunt beatae esse id nihil voluptates magni, excepturi distinctio impedit illo, incidunt iure facilis atque, inventore reprehenderit quidem aliquid recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium quod ad sequi atque accusamus deleniti placeat dignissimos illum nulla voluptatibus vel optio, molestiae dolore velit iste maxime, nobis odio molestias!</p>
+                        <p>At Insaf Medical, we are committed to providing top-quality healthcare with a team of experienced and compassionate doctors. Our mission is to ensure that every patient receives personalized treatment in a comfortable and professional environment. From general check-ups to specialized medical consultations, we offer a wide range of services to cater to your healthcare needs.</p>
+                        <p>Our dedicated team of doctors and medical staff prioritize your well-being with state-of-the-art facilities and the latest medical advancements. Whether you need preventive care, diagnostic services, or treatment for chronic conditions, Insaf Medical is here to support you every step of the way. Your health is our priority, and we strive to deliver excellence in medical care with integrity and dedication.</p>
                     </div>
                 </div>
 

@@ -22,7 +22,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <h2 style="color: #00D9A5;font-weight: 500;font-size: 30px;" class="text-center mt-1 mb-2">Blog Details</h2>
+                    <h2 style="color: #fb0000;font-weight: 500;font-size: 30px;" class="text-center mt-1 mb-2">Blog Details</h2>
 
                     <div class="row">
 
