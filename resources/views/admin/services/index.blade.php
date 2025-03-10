@@ -10,9 +10,9 @@
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            <h3 class="text-center">Account List</h3>
+            <h3 class="text-center">List of Services</h3>
             <div class="d-flex justify-content-end" style="margin-top: -20px;">
-                <a href="{{ route('accounts.create') }}" class="btn btn-primary mb-3">Add Account</a>
+                <a href="{{ route('services.create') }}" class="btn btn-primary mb-3">Add Services</a>
             </div>
         </div>
         <div class="card-body">
@@ -20,26 +20,24 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Account Number</th>
-                        <th>Account Type</th>
-                        <th>Account Name</th>
-                        <th>Opening Date</th>
+                        <th>Specialist Type</th>
+                        <th>Status</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($accounts as $account)
+                    @foreach($services as $service)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $account->account_number }}</td>
-                        <td>{{ $account->account_type }}</td>
-                        <td>{{ $account->account_name }}</td>
-                        <td>{{ $account->opening_date }}</td>
-                        <td class="d-flex">
-                            <div class="btn-group">
-                                <a href="{{ route('accounts.edit', $account->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                                <button class="btn btn-danger btn-sm" id="delete_button" data-id="{{ $account->id }}">Delete</button>
-                            </div>
+                        <td>{{ $service->specialist_type }}</td>
+                        <td>{{ $service->status }}</td>
+                        <td>
+                            <a href="{{ route('services.edit', $service->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                            <form action="{{ route('services.destroy', $service->id) }}" method="POST" class="d-inline delete-form" data-id="{{ $service->id }}">
+                                @csrf
+                                @method('DELETE')
+                                <button  class="btn btn-danger btn-sm delete-button" data-id="{{ $service->id }}">Delete</button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach

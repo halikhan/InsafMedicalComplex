@@ -11,14 +11,14 @@
                     <h3 class="text-center font-weight-light my-4">Create Patient</h3>
                 </div>
                 @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 
                 <div class="card-body">
                     <form action="{{ route('patients.store') }}" method="POST">
@@ -55,9 +55,14 @@
                             <label for="admit_date">Admit Date</label>
                             <input type="date" name="admit_date" id="admit_date" class="form-control">
                         </div>
+        
                         <div class="form-group">
-                            <label for="shift">Shift</label>
-                            <input type="text" name="shift" id="shift" class="form-control" placeholder="Enter Shift">
+                            <label for="shift">shift</label>
+                            <select name="shift" id="shift" class="form-control">
+                                <option value="Morning">Morning</option>
+                                <option value="Evening">Evening</option>
+                                <option value="Night">Night</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="time">Time</label>
@@ -66,6 +71,10 @@
                         <div class="form-group">
                             <label for="file_no">File No</label>
                             <input type="text" name="file_no" id="file_no" class="form-control" placeholder="Enter File No">
+                        </div>
+                        <div class="form-group">
+                            <label for="admission_type">Admission Type</label>
+                            <input type="text" name="admission_type" id="admission_type" class="form-control" placeholder="Enter Admission Type">
                         </div>
                         <div class="form-group">
                             <label for="room_no">Room No</label>
@@ -84,18 +93,10 @@
                             <input type="text" name="relation_with_patient" id="relation_with_patient" class="form-control" placeholder="Enter Relation">
                         </div>
                         <div class="form-group">
-                            <label for="advance_received">Advance Received</label>
-                            <input type="number" name="advance_received" id="advance_received" class="form-control" placeholder="Enter Advance Received Amount">
-                        </div>
-                            
-                        <div class="form-group">
                             <label for="admission_number">Admission Number</label>
                             <input type="text" name="admission_number" id="admission_number" class="form-control" placeholder="Enter Admission Number">
                         </div>
-                        <div class="form-group">
-                            <label for="admission_type">Admission Type</label>
-                            <input type="text" name="admission_type" id="admission_type" class="form-control" placeholder="Enter Admission Type">
-                        </div>
+          
                         <div class="form-group">
                             <label for="lmp_date">LMP Date</label>
                             <input type="date" name="lmp_date" id="lmp_date" class="form-control">
@@ -104,8 +105,13 @@
                             <label for="expected_due_date">Expected Due Date</label>
                             <input type="date" name="expected_due_date" id="expected_due_date" class="form-control">
                         </div>
+                        <div class="form-group">
+                            <label for="advance_received">Advance Received</label>
+                            <input type="number" name="advance_received" id="advance_received" class="form-control" placeholder="Enter Advance Received Amount">
+                        </div>
+                        <br>
                         <div class="form-group text-center">
-                            <button type="submit" class="btn btn-primary">Create</button>
+                            <button type="submit" class="btn btn-info">Create</button>
                             <a href="{{ route('patients.index') }}" class="btn btn-secondary">Cancel</a>
                         </div>
                     </form>

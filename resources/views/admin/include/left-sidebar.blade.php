@@ -123,12 +123,21 @@
                                 <div class="sb-sidenav-menu-heading text-light">Patients</div>
                                 <a class="nav-link text-light" href="#" onclick="toggleSubMenu('patientslist')">
                                     <div class="sb-nav-link-icon"><i class="fas fa-user-injured"></i></div>
-                                    Patient Management
+                                    Patient Register
                                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                 </a>
                                 <div id="patientslist" style="display: {{ request()->routeIs('patients.*') ? 'block' : 'none' }}; padding-left: 20px;">
                                     <a class="nav-link {{ request()->routeIs('patients.create') ? 'active-link' : '' }}" href="{{route('patients.create')}}">Add Patient</a>
                                     <a class="nav-link {{ request()->routeIs('patients.index') ? 'active-link' : '' }}" href="{{route('patients.index')}}">Manage Patients</a>
+                                </div>
+                                <a class="nav-link text-light" href="#" onclick="toggleSubMenu('patientslipslist')">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-user-injured"></i></div>
+                                    Patient Slips
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div id="patientslipslist" style="display: {{ request()->routeIs('patientslips.*') ? 'block' : 'none' }}; padding-left: 20px;">
+                                    <a class="nav-link {{ request()->routeIs('patientslips.create') ? 'active-link' : '' }}" href="{{route('patientslips.create')}}">Add Slips</a>
+                                    <a class="nav-link {{ request()->routeIs('patientslips.index') ? 'active-link' : '' }}" href="{{route('patientslips.index')}}">Manage Slips</a>
                                 </div>
                             @endif
                         @endauth

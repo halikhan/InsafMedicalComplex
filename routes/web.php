@@ -14,6 +14,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PharmachyController;
 use App\Http\Controllers\LabController;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\PatientSlipController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TestRateController;
@@ -80,6 +81,10 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::resource('services', ServiceController::class);
     Route::resource('company_registrations', CompanyRegistrationController::class);
     
+    Route::resource('patientslips', PatientSlipController::class);
+    Route::get('patientslips/{id}/print', [PatientSlipController::class, 'print'])->name('patientslips.print');
+    Route::get('patientslips/{id}/pdf', [PatientSlipController::class, 'downloadPDF'])->name('patientslips.pdf');
+
     Route::resource('patients', PatientController::class);
     Route::resource('accounts', AccountController::class);
     Route::resource('reports', ReportController::class);

@@ -14,6 +14,10 @@
             <table id="patientsTable" class="table table-bordered table-striped">
                 <thead>
                     <tr>
+                        <th>MRN#</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        {{-- <th>NIC</th> --}}
                         <th>Contact</th>
                         <th>Age</th>
                         <th>Gender</th>
@@ -22,8 +26,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($patients as $patient)
+                    @foreach($patients as $key=> $patient)
                     <tr>
+                        <td>{{ $key+1 }}</td>
+                        <td>{{ $patient->name }}</td>
+                        <td>{{ $patient->address }}</td>
+                        {{-- <td>{{ $patient->cnic }}</td> --}}
                         <td>{{ $patient->contact }}</td>
                         <td>{{ $patient->age }}</td>
                         <td>{{ $patient->gender }}</td>
