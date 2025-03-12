@@ -62,11 +62,6 @@
                                     });
                                 });
                             </script>
-
-
-
-
-
                             {{--End of usertype--}}
                             <div class="row mb-3">
                                 <div class="col-md-12">
@@ -102,8 +97,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
                             <div class="row mb-3">
                                 <div class="col-md-12">
                                     <div class="form-floating mb-3 mb-md-0">
@@ -112,9 +105,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
-
                             <div class="mt-4 mb-0">
                                 <input type="submit" class="btn btn-outline-success text-center" value="Create User">
                             </div>

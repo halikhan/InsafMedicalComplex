@@ -29,7 +29,8 @@ return new class extends Migration
             $table->string('procedure_name');
             $table->string('test_name');
             $table->string('service_name');
-            $table->decimal('charges', 10, 2);
+            $table->string('doctor_name');
+            $table->decimal('charges', 10, 2)->nullable();
             $table->decimal('change_rate', 10, 2)->nullable();
             $table->decimal('discount', 10, 2)->nullable();
             $table->decimal('total_amount', 10, 2);
