@@ -18,14 +18,8 @@
                         <th>Name</th>
                         <th>Age</th>
                         <th>Gender</th>
-                        {{-- <th>Contact No</th>
-                        <th>Procedure</th>
                         <th>Total Amount</th> 
-                        <th>Discount</th> --}}
                         <th>Cash Received</th>
-                        {{-- <th>Dues</th> --}}
-                        <th>Actions</th>
-                        {{-- <th>PDF</th> --}}
                         <th>Print</th>
                     </tr>
                 </thead>
@@ -37,23 +31,10 @@
                         <td>{{ $patient->patient_name }}</td>
                         <td>{{ $patient->age }}</td>
                         <td>{{ $patient->gender }}</td>
-                        {{-- <td>{{ $patient->contact_no }}</td> --}}
-                        {{-- <td>{{ $patient->procedure_name }}</td> --}}
-                        {{-- <td>{{ number_format($patient->total_amount, 2) }}</td> --}}
-                        {{-- <td>{{ number_format($patient->discount, 2) }}</td> --}}
+                        <td>{{ number_format($patient->total_amount, 2) }}</td>
                         <td>{{ number_format($patient->cash_received, 2) }}</td>
-                        {{-- <td>{{ number_format($patient->dues, 2) }}</td> --}}
-                        <td class="text-center">
-                            <a href="{{ route('patientslips.edit', $patient->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                            <form action="{{ route('patientslips.destroy', $patient->id) }}" method="POST" style="display: inline-block;" onsubmit="return confirm('Are you sure?');">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                            </form> 
-                        </td>
-                        <td>
-                        {{-- <a href="{{ route('patientslips.pdf', $patient->id) }}" class="btn btn-sm btn-success">Download PDF</a> --}}
-                        <a href="{{ route('patientslips.print', $patient->id) }}" class="btn btn-sm btn-info" target="_blank">Print</a>
+                 
+                        <td> <a href="{{ route('patients.printslip', $patient->id) }}" class="btn btn-sm btn-info" target="_blank">Print</a>
 
                         </td>
                     </tr>

@@ -17,6 +17,9 @@ return new class extends Migration {
             $table->integer('age');
             $table->string('gender');
             $table->date('admit_date');
+            $table->string('service_name')->nullable();
+            $table->string('doctor_name')->nullable();
+            $table->string('panel_outside')->nullable();
             $table->string('shift');
             $table->time('time');
             $table->string('file_no')->nullable();
@@ -29,6 +32,7 @@ return new class extends Migration {
             $table->string('admission_type');
             $table->date('lmp_date')->nullable();
             $table->date('expected_due_date')->nullable();
+
             $table->timestamps();
         });
     }

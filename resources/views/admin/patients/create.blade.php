@@ -32,12 +32,12 @@
                             <input type="text" name="address" id="address" class="form-control" placeholder="Enter Address">
                         </div>
                         <div class="form-group">
-                            <label for="contact">Contact</label>
-                            <input type="text" name="contact" id="contact" class="form-control" placeholder="Enter Contact Number">
+                            <label for="contact">Contact <small style="color: red">Only Numbers</small></label>
+                            <input type="number" name="contact" id="contact" class="form-control" placeholder="Enter Contact Number">
                         </div>
                         <div class="form-group">
-                            <label for="cnic">CNIC</label>
-                            <input type="text" name="cnic" id="cnic" class="form-control" placeholder="Enter CNIC">
+                            <label for="cnic">CNIC <small style="color: red">Only Numbers</small></label>
+                            <input type="number" name="cnic" id="cnic" class="form-control" placeholder="Enter CNIC">
                         </div>
                         <div class="form-group">
                             <label for="age">Age</label>
@@ -70,15 +70,48 @@
                         </div>
                         <div class="form-group">
                             <label for="file_no">File No</label>
-                            <input type="text" name="file_no" id="file_no" class="form-control" placeholder="Enter File No">
+                            <input type="number" name="file_no" id="file_no" class="form-control" placeholder="Enter File No">
+                        </div>
+                        <!-- Panel Outside -->
+                        <div class="form-group">
+                            <label for="panel_outside">Panel Outside</label>
+                            <select name="panel_outside" id="panel_outside" class="form-control select2">
+                                <option value="">Select Panel Outside</option>
+                                @foreach($getCompanyRegistration as $value)
+                                    <option value="{{ $value->panel_name }}">{{ $value->panel_name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="doctor_name">Doctor Name</label>
+                            <select name="doctor_name" id="doctor_name" class="form-control select2">
+                                <option value="">Select Doctor Name</option>
+                                @foreach($getAllDoctor as $value)
+                                    <option value="{{ $value->name }}" data-specialist_type="{{ $value->specialist_type }}">
+                                        {{ $value->name }} - {{ $value->specialist_type }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <!-- Service Name (Auto-filled) -->
+                        <div class="form-group">
+                            <label for="service_name">Consultant</label>
+                            <input type="text" name="service_name" id="service_name" class="form-control" value="" readonly>
                         </div>
                         <div class="form-group">
                             <label for="admission_type">Admission Type</label>
                             <input type="text" name="admission_type" id="admission_type" class="form-control" placeholder="Enter Admission Type">
                         </div>
+        
                         <div class="form-group">
                             <label for="room_no">Room No</label>
-                            <input type="text" name="room_no" id="room_no" class="form-control" placeholder="Enter Room No">
+                            <select name="room_no" id="room_no" class="form-control select2">
+                                <option value="">Select Panel Outside</option>
+                                @foreach($getWard as $value)
+                                    <option value="{{ $value->ward_name }}">{{ $value->ward_name }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="attendant_name">Attendant Name</label>
@@ -121,3 +154,43 @@
     </div>
 </div>
 @endsection
+
+<!-- Include Select2 JS and jQuery -->
+@push('styles')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css">
+@endpush
+
+@push('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+    <script>
+
+    $(document).ready(function() {
+        $('.select2').select2({
+            placeholder: "Select an option",
+            allowClear: true
+        });
+        $('#doctor_name').change(function() {
+            var specialistType = $(this).find(':selected').data('specialist_type') || "";
+            $('#service_name').val(specialistType);
+        });
+    });
+
+    $(document).ready(function() {
+        $('#test_name').select2({
+            placeholder: "Select Test(s)",
+            allowClear: true
+        });
+
+        // Calculate and update total charges when test selections change
+        $('#test_name').change(function() {
+            var totalCharges = 0;
+            $('#test_name option:selected').each(function() {
+                var charge = parseFloat($(this).data('charges')) || 0;
+                totalCharges += charge;
+            });
+            $('#total_charges').val(totalCharges);
+        });
+    });
+    </script>
+    
+@endpush

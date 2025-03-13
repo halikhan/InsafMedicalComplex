@@ -33,4 +33,6 @@ class PatientSlip extends Model
         'cash_received',
         'dues'
     ];
+
+    
 }

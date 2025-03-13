@@ -16,13 +16,14 @@
                     <tr>
                         <th>MRN#</th>
                         <th>Name</th>
-                        <th>Address</th>
+                        {{-- <th>Address</th> --}}
                         {{-- <th>NIC</th> --}}
                         <th>Contact</th>
                         <th>Age</th>
                         <th>Gender</th>
                         <th>Admit Date</th>
                         <th>Actions</th>
+                        <th>Slips</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,7 +31,7 @@
                     <tr>
                         <td>{{ $key+1 }}</td>
                         <td>{{ $patient->name }}</td>
-                        <td>{{ $patient->address }}</td>
+                        {{-- <td>{{ $patient->address }}</td> --}}
                         {{-- <td>{{ $patient->cnic }}</td> --}}
                         <td>{{ $patient->contact }}</td>
                         <td>{{ $patient->age }}</td>
@@ -38,11 +39,17 @@
                         <td>{{ $patient->admit_date }}</td>
                         <td class="text-center">
                             <a href="{{ route('patients.edit', $patient->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="{{ route('patients.show', $patient->id) }}" class="btn btn-sm btn-info">show</a>
                             <form action="{{ route('patients.destroy', $patient->id) }}" method="POST" style="display: inline-block;" onsubmit="return confirm('Are you sure?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger delete-button">Delete</button>
-                            </form> </td>
+                            </form> 
+                        </td>
+                        <td>
+                            <a href="{{ route('patients.sliplist', $patient->id) }}" class="btn btn-sm btn-success">list</a>
+
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

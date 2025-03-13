@@ -10,7 +10,8 @@ class Patient extends Model
 
     protected $fillable = [
         'name', 'address', 'contact', 'cnic', 'age', 'gender', 'admit_date', 'shift', 'time',
-        'file_no', 'room_no', 'attendant_name', 'attendant_contact', 'relation_with_patient',
-        'advance_received', 'admission_number', 'admission_type', 'lmp_date', 'expected_due_date'
+        'file_no', 'panel_outside', 'doctor_name', 'service_name', 'admission_type', 
+        'room_no', 'attendant_name', 'attendant_contact', 'relation_with_patient',
+        'advance_received', 'admission_number', 'lmp_date', 'expected_due_date'
     ];
 }

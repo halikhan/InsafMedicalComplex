@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CompanyRegistration;
 use App\Models\Doctor;
+
 use App\Models\Patient;
 use Illuminate\Http\Request;
 use App\Models\PatientSlip;
@@ -195,14 +196,25 @@ class PatientSlipController extends Controller
     public function print($id)
     {
         $patientSlip = PatientSlip::findOrFail($id);
-        return view('admin.patientslip.print', compact('patientSlip'));
+    
+        // Decode test IDs from JSON
+        $testIds = json_decode($patientSlip->test_name, true);
+    
+        // Fetch test details from TestRate table
+        $tests = TestRate::whereIn('id', $testIds)->get();
+        // dd($tests);
+        return view('admin.patientslip.print', get_defined_vars());
     }
+    
 
     public function downloadPDF($id)
     {
         $patientSlip = PatientSlip::findOrFail($id);
-    
-        $pdf = Pdf::loadView('admin.patientslip.print', compact('patientSlip'));
+            // Decode test IDs from JSON
+        $testIds = json_decode($patientSlip->test_name, true);
+        // Fetch test details from TestRate tabl
+        $tests = TestRate::whereIn('id', $testIds)->get();
+        $pdf = Pdf::loadView('admin.patientslip.print', get_defined_vars());
     
         return $pdf->download('PatientSlip_' . $patientSlip->id . '.pdf');
     }

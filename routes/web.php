@@ -86,6 +86,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('patientslips/{id}/pdf', [PatientSlipController::class, 'downloadPDF'])->name('patientslips.pdf');
 
     Route::resource('patients', PatientController::class);
+    Route::get('patients/{id}/sliplist', [PatientController::class, 'patientslips'])->name('patients.sliplist');
+    Route::get('patients/{id}/printslip', [PatientController::class, 'patientprintslip'])->name('patients.printslip');
+
     Route::resource('accounts', AccountController::class);
     Route::resource('reports', ReportController::class);
     Route::resource('doctor',DoctorController::class);
